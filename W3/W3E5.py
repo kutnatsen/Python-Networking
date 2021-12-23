@@ -21,3 +21,24 @@ base_cmd_windows = 'ping -n 2'
 # Ternary operator
 base_cmd = base_cmd_windows if WINDOWS else base_cmd_linux
 '''
+import os
+
+windows = True
+base_cmd_linux = "ping -c 2"
+base_cmd_windows = "ping -n 2 "
+base_cmd = base_cmd_windows if windows else base_cmd_linux
+
+my_ip_addr_list = []
+
+for i in range(3):
+    i = str(i)
+    ip = "192.168.4.20" + i
+    my_ip_addr_list.append(ip)
+
+for i, ip in enumerate(my_ip_addr_list):
+    print("{} ---> {}".format(i,ip))
+
+for ip in my_ip_addr_list:
+    print(ip)
+    ping = base_cmd + ip
+    os.system(ping)
