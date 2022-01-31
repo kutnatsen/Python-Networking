@@ -39,11 +39,11 @@ def mac_conv(mac):
     return new_mac
 
 
-print(mac_conv("0000.aaaa.bbbb"))
-print("-" *80)
-print(mac_conv("a:b:c:d:e:f"))
-print("-" *80)
-print(mac_conv("00-00-aa-aa-bb-bb"))
-print("-" *80)
-print(mac_conv("04-10-a-aa-b-b"))
+assert "01:23:02:34:04:56" == mac_conv("0123.0234.0456")
+assert "AA:BB:CC:DD:EE:FF" == mac_conv("aabb.ccdd.eeff")
+assert "0A:0B:0C:0D:0E:0F" == mac_conv("a:b:c:d:e:f")
+assert "01:02:0A:0B:03:44" == mac_conv("1:2:a:b:3:44")
+assert "0A:0B:0C:0D:0E:0F" == mac_conv("a-b-c-d-e-f")
+assert "01:02:0A:0B:03:44" == mac_conv("1-2-a-b-3-44")
+print("Tests passed")
 
